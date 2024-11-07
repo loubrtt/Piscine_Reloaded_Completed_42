@@ -6,27 +6,26 @@
 #    By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 16:01:50 by lobriott          #+#    #+#              #
-#    Updated: 2024/11/07 10:48:19 by loubriottet      ###   ########.fr        #
+#    Updated: 2024/11/07 15:30:42 by loubriottet      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c ./srcs/ft_strlen.c ./srcs/ft_swap.c
-
-HD = ./includes/
+HEADER = ./includes/ft.h 
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-OBJS = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o 
+SRC = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c ./srcs/ft_strlen.c ./srcs/ft_swap.c
+
+OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) -c $(SRC) -I $(HD)
-	ar rc $(NAME) $(OBJS)
+$(NAME) : $(OBJS) $(HEADER)
+	ar rcs $(NAME) $(OBJS) $(HEADER)
 
 clean:
 	rm -rf $(OBJS)
