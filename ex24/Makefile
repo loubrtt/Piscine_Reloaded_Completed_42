@@ -24,6 +24,7 @@ OBJS = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 
 all: $(NAME)
 
+$(NAME):
 	$(CC) $(FLAGS) -c $(SRC) -I $(INCLUDES)
 	ar rc $(NAME) $(OBJS)
 
