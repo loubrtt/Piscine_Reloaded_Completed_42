@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lobriott <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 16:01:50 by lobriott          #+#    #+#              #
-#    Updated: 2024/11/06 16:58:41 by lobriott         ###   ########.fr        #
+#    Updated: 2024/11/07 10:48:19 by loubriottet      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 SRC = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strcmp.c ./srcs/ft_strlen.c ./srcs/ft_swap.c
 
-INCLUDES = ./includes/ft.h
+HD = ./includes/
 
 CC = gcc
 
@@ -25,7 +25,7 @@ OBJS = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 all: $(NAME)
 
 $(NAME):
-	$(CC) $(FLAGS) -c $(SRC) -I $(INCLUDES)
+	$(CC) $(FLAGS) -c $(SRC) -I $(HD)
 	ar rc $(NAME) $(OBJS)
 
 clean:
